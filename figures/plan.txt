@@ -1,0 +1,5 @@
+1. simple figures classes
+2. classes for final figures
+3. classes for windows
+4. creating figures
+5. svg generation
