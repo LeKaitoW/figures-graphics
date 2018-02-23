@@ -1,0 +1,13 @@
+part: up, down, window, hollow
+height_ratio, up_width, down_width
+
+up & down:
+cone -> diam
+cylinder -> diam
+prism -> edges, width (checks???)
+pyramid -> edges, width (checks???)
+sphere -> diam
+
+window:
+
+hollow:
