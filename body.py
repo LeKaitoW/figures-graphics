@@ -1,10 +1,8 @@
-from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
-from PyQt5.QtSvg import *
 from PyQt5.QtGui import *
 
-
 # size - width, height, evaluation, corners
+
 
 class Body(object):
     def __init__(self, *args):
@@ -19,7 +17,6 @@ class Body(object):
 
 class Cone(Body):
     def __init__(self, *args):
-        super(Body, self).__init__()
         self.width = args[0]
 
     def redraw(self, painter, start, *size):
@@ -43,26 +40,6 @@ class Cylinder(Body):
         painter.drawEllipse(QPoint(size[0] // 2, size[1] * 5 // 6), self.width // 2, self.width // 2)
 
 
-class Prism(Body):
-    def __init__(self, *args):
-        super(Body, self).__init__()
-        self.edges = args[1]
-        self.width = args[0]
-
-    def redraw(self, painter, *size):
-        corners = size[3]
-
-
-class Pyramid(Body):
-    def __init__(self, *args):
-        super(Body, self).__init__()
-        self.edges = args[1]
-        self.width = args[0]
-
-    def redraw(self, painter, start, *size):
-        print(self.edges)
-
-
 class Sphere(Body):
     def __init__(self, *args):
         super(Body, self).__init__()
@@ -72,3 +49,79 @@ class Sphere(Body):
         painter.drawEllipse(QPoint(size[0] // 2, start + size[1] * size[2] * 2 // 3 // 2), self.width//2, self.width//2)
         painter.setBrush(QColor(255, 255, 255))
         painter.drawEllipse(QPoint(size[0] // 2, size[1] * 5 // 6), self.width//2, self.width//2)
+
+
+class Pyramid(Body):
+    def __init__(self, *args):
+        super(Body, self).__init__()
+
+
+class TriangularPyramid(Pyramid):
+    def __init__(self, *args):
+        super(Pyramid, self).__init__()
+
+    def redraw(self, painter, start, *size):
+        pass
+
+
+class QuadrangularPyramid(Pyramid):
+    def __init__(self, *args):
+        super(Pyramid, self).__init__()
+
+    def redraw(self, painter, start, *size):
+        pass
+
+
+class PentagonalPyramid(Pyramid):
+    def __init__(self, *args):
+        super(Pyramid, self).__init__()
+
+    def redraw(self, painter, start, *size):
+        pass
+
+
+class HexagonalPyramid(Pyramid):
+    def __init__(self, *args):
+        super(Pyramid, self).__init__()
+
+    def redraw(self, painter, start, *size):
+        pass
+
+class Prism(Body):
+    def __init__(self, *args):
+        super(Body, self).__init__()
+
+    def redraw(self, painter, *size):
+        corners = size[3]
+
+
+class TriangularPrism(Prism):
+    def __init__(self, *args):
+        super(Prism, self).__init__()
+
+    def redraw(self, painter, *size):
+        pass
+
+
+class QuadrangularPrism(Prism):
+    def __init__(self, *args):
+        super(Prism, self).__init__()
+
+    def redraw(self, painter, *size):
+        pass
+
+
+class PentagonalPrism(Prism):
+    def __init__(self, *args):
+        super(Prism, self).__init__()
+
+    def redraw(self, painter, *size):
+        pass
+
+
+class HexagonalPrism(Prism):
+    def __init__(self, *args):
+        super(Prism, self).__init__()
+
+    def redraw(self, painter, *size):
+        pass

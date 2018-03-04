@@ -48,3 +48,6 @@ Temporary Items
 
 #idea
 .idea
+__pycache__
+venv
+venv1

@@ -59,7 +59,7 @@ class DisplayWidget(QWidget):
         self.painter.fillRect(0, 0, self.width(), self.height(), QColor(255, 255, 255))
         self.painter.drawRect(0, 0, self.width() - 1, self.height() - 1)
         self.painter.drawLine(0, self.height() * 2 // 3, self.width() - 1, self.height() * 2 // 3)
-        self.window().part.redraw(self.painter, *self.window().size)
+        self.window().part.draw(self.painter, *self.window().size)
 
 
 class BasicTab(QWidget):

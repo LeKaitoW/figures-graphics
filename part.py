@@ -1,7 +1,4 @@
-import body
-
-
-class Part():
+class Part(object):
     def __init__(self):
         self.up = None
         self.down = None
@@ -24,7 +21,13 @@ class Part():
     def set_elevation(self, ratio):
         self.elevation = ratio
 
-    def redraw(self, painter, *size):
+    def set_up_width(self, up_width):
+        self.up.set_width(up_width)
+
+    def set_down_width(self, down_width):
+        self.down.set_width(down_width)
+
+    def draw(self, painter, *size):
         if self.down and size[2] != 1:
             down_size = list(size[:-1])
             down_size.append(1 - size[2])
